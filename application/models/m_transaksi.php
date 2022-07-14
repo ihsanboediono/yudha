@@ -5,11 +5,7 @@ class M_transaksi extends CI_Model
 {
     public function gettransaksi($id = NULL)
     {
-        $this->db->where('id_transaksi', $id);
-        $this->db->select('transaksi.*, pengguna.nama_pengguna');
-        $this->db->from('transaksi');
-        $this->db->join('pengguna', 'transaksi.kepada=pengguna.id_pengguna');
-        $trks = $this->db->get();
+        $trks = $this->db->get('transaksi');
         return $trks->result_array();
     }
     public function BelumSelesai($id = NULL)

@@ -65,11 +65,10 @@
                     foreach ($transaksinya as $transaksi) : ?>
                         <tr>
                             <td><?= $a++ ?></td>
-                            <td><?= $transaksi['nama_pengguna'] ?>
-                            </td>
-                            <td><?= rupiah($transaksi['total']) ?></td>
-                            <td><?= format_indo2($transaksi['waktu_transaksi'])  ?></td>
-                            <td><a href="<?= base_url('laporan/cetak/') . $transaksi['id_transaksi'] ?>"><i class="icon-printer menu-icon"></i></a></td>
+                            <td><?= $transaksi['nama_obat'] ?></td>
+                            <td><?= $transaksi['jumlah'] ?></td>
+                            <td><?= $transaksi['harga'] ?></td>
+                            <td><?= $transaksi['waktu_transaksi'] ?></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>

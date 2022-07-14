@@ -23,8 +23,9 @@ class Laporan extends CI_Controller
             // 'transaksinya' => $this->m_detail->getDetail()
         ];
 
-        $data['transaksinya'] = $this->m_detail->getDetail();
-
+        $data['transaksinya'] = $this->m_transaksi->gettransaksi();
+        // var_dump($data['transaksinya']);
+        // die;
         $this->load->view('base/base', $data);
     }
     public function masuk()
@@ -85,7 +86,7 @@ class Laporan extends CI_Controller
                     
                     $data["nama_obat"] = $t[1];
                     $data["jumlah"] = $t[2];
-                    $data["total"] = $t[3];
+                    $data["harga"] = $t[3];
                     $data["waktu_transaksi"] = date('Y-m-d', strtotime($t[4])) ;
                     array_push($datas,$data);
                 }
